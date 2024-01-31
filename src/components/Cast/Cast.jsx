@@ -33,7 +33,7 @@ const Cast = () => {
       <ul className="cast">
         {cast?.map(({ credit_id, profile_path, name, character }) => {
           return (
-            profile_path && (
+            
               <li className="cast" key={credit_id}>
                 <img
                   src={profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` : defaultImg}
@@ -43,7 +43,7 @@ const Cast = () => {
                 <h3>{name}</h3>
                 <p>{character}</p>
               </li>
-            )
+            
           );
         })}
       </ul>
