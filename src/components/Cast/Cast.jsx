@@ -11,6 +11,8 @@ const Cast = () => {
   const [cast, setCast] = useState();
   const [loading, setLoading] = useState(false);
 
+  const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
+
   useEffect(() => {
     async function getCast() {
       try {
@@ -34,10 +36,10 @@ const Cast = () => {
             profile_path && (
               <li className="cast" key={credit_id}>
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                  src={profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` : defaultImg}
                   alt={name}
                   loading="lazy"
-                />
+                /> 
                 <h3>{name}</h3>
                 <p>{character}</p>
               </li>
